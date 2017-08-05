@@ -13,11 +13,15 @@ orgX = Trans(1,4);
 orgY = Trans(2,4);
 orgZ = Trans(3,4);
 
-X = plot3([orgX,Trans(1,4)+Trans(1,1)], [orgY, Trans(2,4)+Trans(2,1)], [orgZ, Trans(3,4)+Trans(3,1)]);
+X = plot3([orgX,orgX+Trans(1,1)], [orgY, orgY+Trans(2,1)], [orgZ, orgZ+Trans(3,1)]);
 hold on
-Y = plot3([orgX,Trans(1,4)+Trans(1,2)], [orgY, Trans(2,4)+Trans(2,2)], [orgZ, Trans(3,4)+Trans(3,2)]);
+Y = plot3([orgX,orgX+Trans(1,2)], [orgY, orgY+Trans(2,2)], [orgZ, orgZ+Trans(3,2)]);
 hold on
-Z = plot3([orgX,Trans(1,4)+Trans(1,3)], [orgY, Trans(2,4)+Trans(2,3)], [orgZ, Trans(3,4)+Trans(3,3)]);
+Z = plot3([orgX,orgX+Trans(1,3)], [orgY, orgY+Trans(2,3)], [orgZ, orgZ+Trans(3,3)]);
 hold on
+title('Multi-DOF manipulator')
+xlabel('X-Coordinate Axis')
+ylabel('Y-Coordinate Axis')
+zlabel('Z-Coordinate Axis')
 
 end
