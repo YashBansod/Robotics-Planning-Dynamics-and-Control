@@ -1,6 +1,6 @@
-Author: Yash Bansod
-Date: 30th January, 2020
-GitHub: https://github.com/YashBansod
+Author: Yash Bansod  
+Date: 30th January, 2020  
+GitHub: https://github.com/YashBansod  
 
 
 
@@ -77,12 +77,6 @@ Rz = [  cosd(theta_z),      -sind(theta_z),     0;
 #### Calculate Overall Rotation matrix
 
 ```matlab
-% Rotation Matrix 1 = Rotation across X followed by Y followed by Z axis
-R_1 = Rz * Ry * Rx;
-
-% Rotation Matrix 2 = Rotation across Z followed by Y followed by X axis
-R_2 = Rx * Ry * Rz;%% Calculate Overall Rotation matrix
-
 % Rotation Matrix 1 = Rotation across X followed by Y followed by Z axis
 R_1 = Rz * Ry * Rx;
 
