@@ -3,12 +3,12 @@
 
 function [] = DH_table(alpha, a, d, theta)
 
-[r(1), c(1)] = size(alpha);
-[r(2), c(2)] = size(a);
-[r(3), c(3)] = size(d);
-[r(4), c(4)] = size(theta);
+[~, c(1)] = size(alpha);
+[~, c(2)] = size(a);
+[~, c(3)] = size(d);
+[~, c(4)] = size(theta);
 
-if (c(1) ~= c(2) | c(1) ~= c(3) | c(1) ~= c(4))
+if (c(1) ~= c(2) || c(1) ~= c(3) || c(1) ~= c(4))
     error('Invalid arguments. Size of all the arguments should be same')
     return
 end

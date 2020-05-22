@@ -3,11 +3,11 @@
 
 function [] = DH_draw(X, Y, Z)
 
-[r(1), c(1)] = size(X);
-[r(2), c(2)] = size(Y);
-[r(3), c(3)] = size(Z);
+[~, c(1)] = size(X);
+[~, c(2)] = size(Y);
+[~, c(3)] = size(Z);
 
-if (c(1) ~= c(2) | c(1) ~= c(3))
+if (c(1) ~= c(2) || c(1) ~= c(3))
     error('Invalid arguments. Size of all the arguments should be same')
     return
 end
