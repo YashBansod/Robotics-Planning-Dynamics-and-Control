@@ -1,17 +1,7 @@
-```matlab
-Author: Yash Bansod
-```
-
-GitHub: https://github.com/YashBansod
+Author: Yash Bansod  
+GitHub: https://github.com/YashBansod  
 
 This is the main program. Just call DH_main in command line or run this file to run the program.
-
-## Contents
-
-- [Clear the environment and the command line](file:///D:/GitHub/Robotics-Dynamics-and-Control/Lab1_Robot Manipulator and Coordinates/html/DH_main.html#1)
-- [Add the directory containing relevant functions to the path variables](file:///D:/GitHub/Robotics-Dynamics-and-Control/Lab1_Robot Manipulator and Coordinates/html/DH_main.html#2)
-- [Define the DH table parameters](file:///D:/GitHub/Robotics-Dynamics-and-Control/Lab1_Robot Manipulator and Coordinates/html/DH_main.html#3)
-- [Call the function that creates and plots the Manipulator](file:///D:/GitHub/Robotics-Dynamics-and-Control/Lab1_Robot Manipulator and Coordinates/html/DH_main.html#4)
 
 ## Clear the environment and the command line
 
