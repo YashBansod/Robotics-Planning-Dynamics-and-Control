@@ -23,8 +23,11 @@ if draw == true
     plot([orgX,X(1)],[orgY,Y(1)]);
     hold on
     plot([X(1),X(2)],[Y(1),Y(2)]);
+    axis([-(L1 + L2), (L1 + L2), -(L1 + L2), (L1 + L2)]);
+    hold off;
     title('2 DOF Planar Manipulator');
     legend('1st Link of Arm', '2nd Link of Arm');
+    drawnow;
 end
 
 end

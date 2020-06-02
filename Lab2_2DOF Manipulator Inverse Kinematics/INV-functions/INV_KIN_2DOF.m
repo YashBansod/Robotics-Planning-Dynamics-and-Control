@@ -26,6 +26,14 @@ elseif (nargin == 6)
     orgY = 0;
 end
 
+expX = expX(end);
+expY = expY(end);
+fprintf("The selected point for end effector is (%0.2f, %0.2f)\n", [expX, expY])
+if hypot(orgX - expX, orgY - expY) > L1 + L2
+    error("Point out of reach");
+    return
+end
+
 %% Variable Initialization
 
 % Control Variables for the PI controller
@@ -62,13 +70,15 @@ Theta(2,1) = Theta(2,1) + deltaTheta(2,1);
 
 % Find the euclidean distance between the desired and current position of
 % the manipulator.
-dist = sqrt((expPoint(1,1) - currPoint(1,1))^2 +(expPoint(2,1)-currPoint(2,1))^2)
+dist = sqrt((expPoint(1,1) - currPoint(1,1))^2 + ...
+            (expPoint(2,1)-currPoint(2,1))^2);
 
 %% Iterative Inverse Kinematics for correcting the manipulator position.
 
 % Correct the manipulator position to reduce the distance.
 while (dist > errorThreshold)
-    [Jacobian, Joint] = ARM_2DOF(L1, L2, Theta(1,1), Theta(2,1), true, orgX, orgY);
+    [Jacobian, Joint] = ARM_2DOF(L1, L2, Theta(1,1), Theta(2,1), ...
+                                                        true, orgX, orgY);
     currPoint = [Joint(m,1); Joint(m,2)];
     errorVec = (expPoint - currPoint);
     sumErrorVec = errorVec + sumErrorVec;
@@ -76,7 +86,8 @@ while (dist > errorThreshold)
     deltaTheta = transpose(Jacobian) * controlErrorVec;
     Theta(1,1) = Theta(1,1) + deltaTheta(1,1);
     Theta(2,1) = Theta(2,1) + deltaTheta(2,1);
-    dist = sqrt((expPoint(1,1) - currPoint(1,1))^2 +(expPoint(2,1)-currPoint(2,1))^2)
+    dist = sqrt((expPoint(1,1) - currPoint(1,1))^2 + ...
+                (expPoint(2,1)-currPoint(2,1))^2);
 end
 
 end

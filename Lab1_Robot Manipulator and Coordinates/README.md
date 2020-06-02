@@ -32,4 +32,6 @@ theta = [15, 30, 0];                % Link Rotation (Across Z axis)
 DH_table(alpha, a, d, theta);
 ```
 
+## Results
+
 ![Multi-DOF manipulator](./images/DH_main_01.png)

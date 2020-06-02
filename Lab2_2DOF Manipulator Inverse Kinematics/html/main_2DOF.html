@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>main_2DOF</title><meta name="generator" content="MATLAB 9.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-05"><meta name="DC.source" content="main_2DOF.m"><style type="text/css">
+      --><title>main_2DOF</title><meta name="generator" content="MATLAB 9.7"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-06-02"><meta name="DC.source" content="main_2DOF.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,71 +66,70 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><pre class="codeinput"><span class="comment">% Clear the workspace and the command window.</span>
-clear;
+  </style></head><body><div class="content"><h1></h1><!--introduction--><pre class="language-matlab">Author: Yash Bansod
+</pre><p>GitHub: <a href="https://github.com/YashBansod">https://github.com/YashBansod</a></p><p>This is the main program.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Clear the environment and the command line</a></li><li><a href="#2">Add the directory containing relevant functions to the path variables</a></li><li><a href="#3">Define the input parameters</a></li></ul></div><h2 id="1">Clear the environment and the command line</h2><pre class="codeinput">clear;
 clc;
-
-<span class="comment">% Set the length of the links of the manipulator robot.</span>
-L1 = 5;
+close <span class="string">all</span>;
+</pre><h2 id="2">Add the directory containing relevant functions to the path variables</h2><pre class="codeinput">addpath(<span class="string">'./INV-functions/'</span>)
+</pre><h2 id="3">Define the input parameters</h2><p>Set the length of the links of the manipulator robot.</p><pre class="codeinput">L1 = 5;
 L2 = 5;
 
 <span class="comment">% This function will take desired manipulator position from user via mouse</span>
-<span class="comment">% pointer.</span>
-[expPoint, Joint] = INV_KIN_2DOF(L1,L2);
+<span class="comment">% pointer. Select a point using the mouse and then press Enter.</span>
+<span class="comment">% [expPoint, Joint] = INV_KIN_2DOF(L1,L2);</span>
 
-<span class="comment">% Also the user can choose to pass the desired manipulator position</span>
+<span class="comment">% Alternatively, user can choose to pass the desired manipulator position</span>
 <span class="comment">% directly as absolute coordinates too.</span>
-<span class="comment">% expX = 5;</span>
-<span class="comment">% expY = 7;</span>
-<span class="comment">% [expPoint, Joint] = INV_KIN_2DOF(L1, L2, expX, expY);</span>
+expX = 5;
+expY = 7;
+[expPoint, Joint] = INV_KIN_2DOF(L1, L2, expX, expY);
 
-expPoint
+fprintf(<span class="string">"The final end effector position is (%0.2f, %0.2f)\n"</span>, expPoint);
 [m, n] = size(Joint);
-currPoint = [Joint(m,1); Joint(m,2)]
-dist = sqrt((expPoint(1,1) - currPoint(1,1))^2 +(expPoint(2,1)-currPoint(2,1))^2)
+currPoint = [Joint(m,1); Joint(m,2)];
+dist = sqrt((expPoint(1,1) - currPoint(1,1))^2 + <span class="keyword">...</span>
+            (expPoint(2,1)-currPoint(2,1))^2 );
 
 msgbox(<span class="string">'Operation Complete'</span>)
-</pre><pre class="codeoutput">
-expPoint =
-
-    6.9991
-    0.7993
-
-
-currPoint =
-
-    6.9485
-    0.7944
-
-
-dist =
-
-    0.0508
-
-</pre><img vspace="5" hspace="5" src="main_2DOF_01.png" alt=""> <img vspace="5" hspace="5" src="main_2DOF_02.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
+</pre><pre class="codeoutput">The selected point for end effector is (5.00, 7.00)
+The final end effector position is (5.00, 7.00)
+</pre><img vspace="5" hspace="5" src="main_2DOF_01.png" alt=""> <img vspace="5" hspace="5" src="main_2DOF_02.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
-% Clear the workspace and the command window.
+%%
+%   Author: Yash Bansod  
+%
+% GitHub: <https://github.com/YashBansod>  
+%
+% This is the main program.    
+
+%% Clear the environment and the command line
 clear;
 clc;
+close all;
 
+%% Add the directory containing relevant functions to the path variables
+addpath('./INV-functions/')  
+
+%% Define the input parameters 
 % Set the length of the links of the manipulator robot.
 L1 = 5;
 L2 = 5;
 
 % This function will take desired manipulator position from user via mouse 
-% pointer.
-[expPoint, Joint] = INV_KIN_2DOF(L1,L2);
+% pointer. Select a point using the mouse and then press Enter.
+% [expPoint, Joint] = INV_KIN_2DOF(L1,L2);
 
-% Also the user can choose to pass the desired manipulator position
+% Alternatively, user can choose to pass the desired manipulator position
 % directly as absolute coordinates too.
-% expX = 5;
-% expY = 7;
-% [expPoint, Joint] = INV_KIN_2DOF(L1, L2, expX, expY);
+expX = 5;
+expY = 7;
+[expPoint, Joint] = INV_KIN_2DOF(L1, L2, expX, expY);
 
-expPoint
+fprintf("The final end effector position is (%0.2f, %0.2f)\n", expPoint);
 [m, n] = size(Joint);
-currPoint = [Joint(m,1); Joint(m,2)]
-dist = sqrt((expPoint(1,1) - currPoint(1,1))^2 +(expPoint(2,1)-currPoint(2,1))^2)
+currPoint = [Joint(m,1); Joint(m,2)];
+dist = sqrt((expPoint(1,1) - currPoint(1,1))^2 + ...
+            (expPoint(2,1)-currPoint(2,1))^2 );
 
 msgbox('Operation Complete')
 
