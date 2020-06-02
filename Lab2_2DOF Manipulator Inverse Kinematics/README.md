@@ -17,19 +17,18 @@ close all;
 addpath('./INV-functions/')
 ```
 
-## Define the input parameters
-
-Set the length of the links of the manipulator robot.
+## Define the input parameters and simulate
 
 ```matlab
+% Set the length of the links of the manipulator robot.
 L1 = 5;
 L2 = 5;
 
-% This function will take desired manipulator position from user via mouse
+% This function will take desired end-effector position from user via mouse 
 % pointer. Select a point using the mouse and then press Enter.
 % [expPoint, Joint] = INV_KIN_2DOF(L1,L2);
 
-% Alternatively, user can choose to pass the desired manipulator position
+% Alternatively, user can choose to pass the desired end-effector position
 % directly as absolute coordinates too.
 expX = 5;
 expY = 7;
