@@ -5,21 +5,17 @@ function Trans = PUMA_TransMatrices(alpha, a, d, theta)
 %% Handle errors (if any) for the parameters passed into the function
 
 % Check for the dimensions of the parameters passed
-[r(1), c(1)] = size(alpha);
-[r(2), c(2)] = size(a);
-[r(3), c(3)] = size(d);
-[r(4), c(4)] = size(theta);
+[~, c(1)] = size(alpha);
+[~, c(2)] = size(a);
+[~, c(3)] = size(d);
+[~, c(4)] = size(theta);
 
-if (c(1) ~= c(2) | c(1) ~= c(3) | c(1) ~= c(4))
+if (c(1) ~= c(2) || c(1) ~= c(3) || c(1) ~= c(4))
     error('Invalid arguments. Size of all the arguments should be same')
     return
 end
 
 %% Generate the Transformation Matrices from the DH-parameters passed
-
-% Plot the Global Reference frame
-% Trans(:,:,1) = DH_para(0,0,0,0);
-% DH_plot(Trans(:,:,1));
 
 % Find the Transformation matrix from the first row of DH-Table
 % This will give us the position and orientation of the end of first link

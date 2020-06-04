@@ -1,20 +1,25 @@
-%%
-%   Author: Yash Bansod  
-%
-% GitHub: <https://github.com/YashBansod>  
-%
-% This is the main program.    
+Author: Yash Bansod  
+GitHub: https://github.com/YashBansod  
 
-%% Clear the environment and the command line
+This is the main program.
+
+## Clear the environment and the command line
+
+```matlab
 clear;
 clc;
 close all;
+```
 
-%% Add the directory containing relevant functions to the path variables
-addpath('./PUMA-functions/')  
+## Add the directory containing relevant functions to the path variables
 
-%% Define the input parameters and simulate
+```matlab
+addpath('./PUMA-functions/')
+```
 
+## Define the input parameters and simulate
+
+```matlab
 % Initialize the DH-Parameters
 % Angle values must be in radians
 alpha   = [0, -pi/2, 0, -pi/2, pi/2, -pi/2];
@@ -46,7 +51,7 @@ t1 = th(1); t2 = th(2); t3 = th(3);
 currPoint = [double(subs(Trans(1,4,6))); double(subs(Trans(2,4,6))); ...
                         double(subs(Trans(3,4,6)))];
 
-% Initialize the plot 
+% Initialize the plot
 scatter3(0, 0, 0, '*');
 hold on
 scatter3(currPoint(1), currPoint(2), currPoint(3));
@@ -69,3 +74,8 @@ title('PUMA 560 Manipulator Simulation')
 xlabel('X-Coordinate Axis')
 ylabel('Y-Coordinate Axis')
 zlabel('Z-Coordinate Axis')
+```
+## Results
+![img](./images/results_1.gif)
+
+![img](./images/PUMA_main_01.png)

@@ -17,9 +17,10 @@ if (c(1) < 2)
 end
 
 %% Draw the line through the points marked by the parameter
+% hold on
 for i = 1:(c(1)-1)
     plot3([X(i), X(i+1)], [Y(i), Y(i+1)], [Z(i), Z(i+1)]);
-    hold on
 end
+drawnow;
 
 end
