@@ -1,5 +1,5 @@
-Author: Yash Bansod  
-GitHub: https://github.com/YashBansod  
+Author: Yash Bansod
+GitHub: https://github.com/YashBansod
 
 This is the main program.
 
@@ -11,91 +11,68 @@ clc;
 close all;
 ```
 
+## Add the directory containing relevant functions to the path variables
+
+```matlab
+addpath('./INV-functions/')
+```
+
 ## Define the input parameters and simulate
 
 ```matlab
 % Set the length of the links of the manipulator robot.
-L1 = 10;
-L2 = 10;
+L1 = 5;
+L2 = 5;
+L3 = 5;
 
-% Define the initial end-effector position (This should be reachable)
-X = 20;
-Y = 0;
-```
+% Set the initial orientation of the robot.
+theta1 = 10;
+theta2 = 0;
+theta3 = 15;
 
-## Compute the inverse algebraic solution for the initial position
+% Define the radius of the circle the end effector should follow
+radius = 10;
+r_sq = radius ^ 2;
 
-```matlab
-C2 = (X^2 + Y^2 - L1^2 -L2^2)/(2 * L1 * L2);
-S2 = sqrt(1-C2^2);
-
-theta2 = atan2(S2, C2);
-
-K1 = L1 + L2* cos(theta2);
-K2 = L2 * sin(theta2);
-theta1 = atan2(Y, X) - atan2(K2, K1);
-
-X1 = L1*cos(theta1);
-Y1 = L1*sin(theta1);
-
-X2 = L1*cos(theta1) + L2*cos(theta1 + theta2);
-Y2 = L1*sin(theta1) + L2*sin(theta1 + theta2);
-
-plot([0, X1], [0,Y1]);
 hold on;
-grid on;
-plot([X1,X2], [Y1, Y2]);
-title('2 DOF Planar Manipulator');
-legend('1st Link of Arm - Initial', '2nd Link of Arm - Initial');
-axis([-30 30 -30 30]);
+% Code for drawing a circle
+for i = -radius: radius/10: radius
+    expX = i;
+    expY = sqrt(r_sq - expX^2);
+    cla;
+    images.roi.Circle(gca,'Center',[0 0],'Radius',radius, 'Facealpha', 0.05);
+    % You can modify the Kp value defined in PLANAR_INV_KIN_3DOF to modify
+    % the inverse jacobian controller behavior.
+    [expPoint, Joint, Theta] = PLANAR_INV_KIN_3DOF(L1, L2, L3, expX, ...
+                                            expY, theta1, theta2, theta3);
+    scatter(Joint(end,1), Joint(end,2));
+    theta1 = Theta(1, 1);
+    theta2 = Theta(2, 1);
+    theta3 = Theta(3, 1);
+end
 
-% Take desired end-effector position from user via mouse pointer.
-% [X,Y] = ginput;
-% X = X(end);
-% Y = Y(end);
-
-% Alternatively, user can choose the desired end-effector position
-% directly as absolute coordinates too.
-X = 5;
-Y = 7;
-
-fprintf("The selected point for end effector is (%0.2f, %0.2f)\n", [X, Y])
-if hypot(X, Y) > L1 + L2
-    error("Point out of reach");
+for i = radius: -radius/10: -radius
+    expX = i;
+    expY = -sqrt(r_sq - expX^2);
+    cla;
+    images.roi.Circle(gca,'Center',[0 0],'Radius',radius, 'Facealpha', 0.05);
+    % You can modify the Kp value defined in PLANAR_INV_KIN_3DOF to modify
+    % the inverse jacobian controller behavior.
+    [expPoint, Joint, Theta] = PLANAR_INV_KIN_3DOF(L1, L2, L3, expX, ...
+                                            expY, theta1, theta2, theta3);
+    theta1 = Theta(1, 1);
+    theta2 = Theta(2, 1);
+    theta3 = Theta(3, 1);
 end
 ```
 
-The selected point for end effector is (5.00, 7.00)
+## Results
 
-![img](./images/inverse_algebraic_control_01.png) 
+<table>
+  <tr>
+    <td> <img src="./images/results_1.gif" > </td>
+    <td> <img src="./images/results_2.gif" > </td>
+   </tr> 
+</table>  
 
-## Compute the inverse algebraic solution for the final position
-
-```matlab
-C2 = (X^2 + Y^2 - L1^2 -L2^2)/(2 * L1 * L2);
-S2 = sqrt(1-C2^2);
-
-theta2 = atan2(S2, C2);
-
-K1 = L1 + L2* cos(theta2);
-K2 = L2 * sin(theta2);
-theta1 = atan2(Y, X) - atan2(K2, K1);
-
-X1 = L1*cos(theta1);
-Y1 = L1*sin(theta1);
-
-X2 = L1*cos(theta1) + L2*cos(theta1 + theta2);
-Y2 = L1*sin(theta1) + L2*sin(theta1 + theta2);
-
-plot([0, X1], [0,Y1]);
-plot([X1,X2], [Y1, Y2]);
-legend('1st Link of Arm - Initial', '2nd Link of Arm - Initial', ...
-    '1st Link of Arm - Final', '2nd Link of Arm - Final');
-hold off;
-
-fprintf("The final end effector position is (%0.2f, %0.2f)\n", [X2,Y2]);
-```
-
-The final end effector position is (5.00, 7.00)
-
-![img](./images/inverse_algebraic_control_02.png)
+![img](./images/PLANAR_main_3DOF_01.png)
