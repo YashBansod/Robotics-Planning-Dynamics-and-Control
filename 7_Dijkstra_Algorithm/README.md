@@ -1,6 +1,7 @@
-Author: Yash Bansod
-Date: 15th September 2017
-Brief: This demonstrates the Dijkstra path planning algorithm
+Author: Yash Bansod  
+Date: 15th September 2017  
+Brief: This demonstrates the Dijkstra path planning algorithm  
+GitHub: https://github.com/YashBansod  
 
 ## Initialize the maps, color maps, start points and destination points
 

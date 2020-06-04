@@ -1,5 +1,5 @@
-Author: Yash Bansod
-GitHub: https://github.com/YashBansod
+Author: Yash Bansod  
+GitHub: https://github.com/YashBansod  
 
 This is the main program.
 

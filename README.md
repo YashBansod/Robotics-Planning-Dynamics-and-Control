@@ -12,11 +12,11 @@ The following are summarizing results from each of the sub-projects in this repo
 <table>
   <tr>
     <td> 
-        <a href="./1_Robot_Manipulator_and_Coordinate"><b>1_Robot_Manipulator_and_Coordinates</b></a>  
+        <a href="./1_Robot_Manipulator_and_Coordinates"><b>1_Robot_Manipulator_and_Coordinates</b></a>  
         <img src="./1_Robot_Manipulator_and_Coordinates/images/DH_main_01.png">
     </td>
     <td> 
-        <a href="(./2_2DOF_Manipulator_Inverse_Kinematics"><b>2_2DOF_Manipulator_Inverse_Kinematics</b></a>  
+        <a href="./2_2DOF_Manipulator_Inverse_Kinematics"><b>2_2DOF_Manipulator_Inverse_Kinematics</b></a>  
         <img src="./2_2DOF_Manipulator_Inverse_Kinematics/images/results_1.gif">
     </td>
   </tr> 
@@ -26,7 +26,7 @@ The following are summarizing results from each of the sub-projects in this repo
         <img src="./3_Inverse_Algebraic_Manipulator_Control/images/inverse_algebraic_control_02.png">
     </td>
     <td> 
-        <a href="(./4_Planar_3DOF_Manipulator_Trajectory"><b>4_Planar_3DOF_Manipulator_Trajectory</b></a>  
+        <a href="./4_Planar_3DOF_Manipulator_Trajectory"><b>4_Planar_3DOF_Manipulator_Trajectory</b></a>  
         <img src="./4_Planar_3DOF_Manipulator_Trajectory/images/results_1.gif">
     </td>
   </tr> 
@@ -36,7 +36,7 @@ The following are summarizing results from each of the sub-projects in this repo
         <img src="./5_PUMA560_Robot_Simulation/images/results_1.gif">
     </td>
     <td> 
-        <a href="(./6_Spring_Mass_Damper_System_Control"><b>6_Spring_Mass_Damper_System_Control</b></a>  
+        <a href="./6_Spring_Mass_Damper_System_Control"><b>6_Spring_Mass_Damper_System_Control</b></a>  
     </td>
   </tr> 
   <tr>
@@ -45,7 +45,7 @@ The following are summarizing results from each of the sub-projects in this repo
         <img src="./7_Dijkstra_Algorithm/images/results_1.gif">
     </td>
     <td> 
-        <a href="(./8_Astar_Algorithm"><b>8_Astar_Algorithm</b></a>  
+        <a href="./8_Astar_Algorithm"><b>8_Astar_Algorithm</b></a>  
         <img src="./8_Astar_Algorithm/images/results_1.gif">
     </td>
   </tr> 

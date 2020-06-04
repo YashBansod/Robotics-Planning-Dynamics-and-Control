@@ -1,5 +1,5 @@
-Author: Yash Bansod
-GitHub: https://github.com/YashBansod
+Author: Yash Bansod  
+GitHub: https://github.com/YashBansod  
 
 ## Clear the environment and the command line
 
