@@ -19,15 +19,19 @@ Jacobian = [- L2*sind(theta1 + theta2) - L1*sind(theta1) - L3*sind(theta1 + thet
     L2*cosd(theta1 + theta2) + L1*cosd(theta1) + L3*cosd(theta1 + theta2 + theta3), L2*cosd(theta1 + theta2) + L3*cosd(theta1 + theta2 + theta3), L3*cosd(theta1 + theta2 + theta3)];
 
 % If it was mentioned in the parameter 'draw' then draw the manipulator.
-if draw == true
-    plot([orgX,X(1)],[orgY,Y(1)]);
-    hold on
-    plot([X(1),X(2)],[Y(1),Y(2)]);
-    hold on
-    plot([X(2),X(3)],[Y(2),Y(3)]);
-end
 
-pause(0.0000001);
+if draw == true
+    hold on;
+    plot([orgX,X(1)],[orgY,Y(1)]);
+    plot([X(1),X(2)],[Y(1),Y(2)]);
+    plot([X(2),X(3)],[Y(2),Y(3)]);
+    hold off;
+    axis([-(L1 + L2 + L3) (L1 + L2 + L3) -(L1 + L2 + L3) (L1 + L2 + L3)]);
+    % mark the graph with details
+    title('3 DOF Planar Manipulator');
+    legend('1st Link of Arm', '2nd Link of Arm' , '3rd Link of Arm');
+    drawnow;
+end
 
 end
 
