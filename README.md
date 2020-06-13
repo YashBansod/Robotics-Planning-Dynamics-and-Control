@@ -1,7 +1,7 @@
 # [RPDC : Robotics-Planning-Dynamics-and-Control](https://github.com/YashBansod/Robotics-Planning-Dynamics-and-Control)
 RPDC : This contains all my MATLAB codes for the Robotics, Planning, Dynamics and Control . The implementations model various kinds of manipulators and mobile robots for position control, trajectory planning and path planning problems.
 
-GitHub Page: https://yashbansod.github.io/Robotics-Planning-Dynamics-and-Control/  
+GitHub Page: https://yashbansod.github.io/projects/Robotics-Planning-Dynamics-and-Control/
 
 
 
