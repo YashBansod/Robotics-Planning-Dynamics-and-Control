@@ -67,7 +67,7 @@ end
 
 The selected point for end effector is (5.00, 7.00)
 
-![img](./images/inverse_algebraic_control_01.png) 
+<div><span class="image fit"><img src="./images/inverse_algebraic_control_01.png" alt="inverse_algebraic_control_01"></span></div>
 
 ## Compute the inverse algebraic solution for the final position
 
@@ -98,4 +98,4 @@ fprintf("The final end effector position is (%0.2f, %0.2f)\n", [X2,Y2]);
 
 The final end effector position is (5.00, 7.00)
 
-![img](./images/inverse_algebraic_control_02.png)
+<div><span class="image fit"><img src="./images/inverse_algebraic_control_02.png" alt="inverse_algebraic_control_02"></span></div>

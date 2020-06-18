@@ -34,4 +34,5 @@ DH_table(alpha, a, d, theta);
 
 ## Results
 
-![Multi-DOF manipulator](./images/DH_main_01.png)
+<div><span class="image fit"><img src="./images/DH_main_01.png" alt="Multi-DOF manipulator"></span></div>
+

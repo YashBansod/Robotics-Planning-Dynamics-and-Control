@@ -44,7 +44,7 @@ drawnow;                        % Update figure
 drawMapEveryTime = true;            % To see how nodes expand on the grid
 ```
 
-![img](./images/dijkstra_01.png)
+<div><span class="image fit"><img src="./images/dijkstra_01.png"></span></div>
 
 ## Process the map to update the parent information and distance from start
 
@@ -109,8 +109,7 @@ while true                              % Create an infinite loop
     map(current) = 3;                       % mark the current point as processed
 end
 ```
-
-![img](./images/dijkstra_02.png)
+<div><span class="image fit"><img src="./images/dijkstra_02.png"></span></div>
 
 ## Construct route from start to dest by following the parent links
 
@@ -143,7 +142,7 @@ legend(hidden_h, {'free space', 'obstacles', 'closed nodes', ...
     'open nodes', 'start node', 'goal node', 'shortest path'} )
 ```
 
-![img](./images/dijkstra_03.png)
+<div><span class="image fit"><img src="./images/dijkstra_03.png"></span></div>
 
 ## Results
-![img](./images/results_1.gif)
+<div><span class="image fit"><img src="./images/results_1.gif"></span></div>

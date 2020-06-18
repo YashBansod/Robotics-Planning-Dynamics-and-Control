@@ -49,7 +49,7 @@ text_y = text(o_x, o_y + 1, o_z, 'Y-Axis', 'color', 'green');
 text_z = text(o_x, o_y, o_z + 1, 'Z-Axis', 'color', 'blue');
 ```
 
-![Reference Frame](./images/rotation_matrices_01.png)
+<div><span class="image fit"><img src="./images/rotation_matrices_01.png" alt="Reference Frame"></span></div>
 
 
 
@@ -98,7 +98,7 @@ text_y_1 = text(o_x + R_1(1, 2), o_y + R_1(2, 2), o_z + R_1(3, 2), 'Y1-Axis', 'c
 text_z_1 = text(o_x + R_1(1, 3), o_y + R_1(2, 3), o_z + R_1(3, 3), 'Z1-Axis', 'color', 'blue');
 ```
 
-![Reference Frame](./images/rotation_matrices_02.png)
+<div><span class="image fit"><img src="./images/rotation_matrices_02.png" alt="Reference Frame"></span></div>
 
 #### Plot the Frame after applying Rotation Matrix 2 to Reference Frame
 
@@ -112,4 +112,4 @@ text_y_2 = text(o_x + R_2(1, 2), o_y + R_2(2, 2), o_z + R_2(3, 2), 'Y2-Axis', 'c
 text_z_2 = text(o_x + R_2(1, 3), o_y + R_2(2, 3), o_z + R_2(3, 3), 'Z2-Axis', 'color', 'blue');
 ```
 
-![Reference Frame](./images/rotation_matrices_03.png)
+<div><span class="image fit"><img src="./images/rotation_matrices_03.png" alt="Reference Frame"></span></div>

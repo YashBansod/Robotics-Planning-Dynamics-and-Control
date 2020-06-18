@@ -44,21 +44,26 @@ msgbox('Operation Complete')
 ```
 
 ## Results
-<table>
+<div class="table-wrapper">
+<table class="alt">
    <tr>
-      <td> <img src="./images/results_1.gif"> </td>
-      <td> <img src="./images/results_2.gif"> </td>
+      <td><div><span class="image fit"><img src="./images/results_1.gif"></span></div></td>
+      <td><div><span class="image fit"><img src="./images/results_2.gif"></span></div></td>
    </tr>
-</table>  
+</table> 
+</div> 
+
 
 
 The selected point for end effector is (5.00, 7.00)
 The final end effector position is (5.00, 7.00)
 
-<table>
+<div class="table-wrapper">
+<table class="alt">
   <tr>
-    <td> <img src="./images/main_2DOF_01.png" > </td>
-    <td> <img src="./images/main_2DOF_02.png" > </td>
+    <td><div><span class="image fit"><img src="./images/main_2DOF_01.png" ></span></div></td>
+    <td><div><span class="image fit"><img src="./images/main_2DOF_02.png" ></span></div></td>
    </tr> 
-</table>  
+</table>
+</div>  
   

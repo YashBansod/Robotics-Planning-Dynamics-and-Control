@@ -76,6 +76,6 @@ ylabel('Y-Coordinate Axis')
 zlabel('Z-Coordinate Axis')
 ```
 ## Results
-![img](./images/results_1.gif)
+<div><span class="image fit"><img src="./images/results_1.gif"></span></div>
 
-![img](./images/PUMA_main_01.png)
+<div><span class="image fit"><img src="./images/PUMA_main_01.png"></span></div>

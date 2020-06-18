@@ -68,11 +68,14 @@ end
 
 ## Results
 
-<table>
+<div class="table-wrapper">
+<table class="alt">
   <tr>
-    <td> <img src="./images/results_1.gif" > </td>
-    <td> <img src="./images/results_2.gif" > </td>
+    <td><div><span class="image fit"><img src="./images/results_1.gif"></span></div></td>
+    <td><div><span class="image fit"><img src="./images/results_2.gif"></span></div></td>
    </tr> 
-</table>  
+</table>
+</div>  
 
-![img](./images/PLANAR_main_3DOF_01.png)
+
+<div><span class="image fit"><img src="./images/PLANAR_main_3DOF_01.png"></span></div>
